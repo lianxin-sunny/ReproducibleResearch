@@ -73,7 +73,7 @@ Mean values didn't change, because here we supplied interval averge for the give
 library(lattice)
 weekdays <- weekdays(as.Date(merged$date))
 data_with_weekdays <- transform(merged, day=weekdays)
-data_with_weekdays$wk <- ifelse(data_with_weekdays$day %in% c("ÐÇÆÚÁù", "ÐÇÆÚÈÕ"),"weekend", "weekday") 
+data_with_weekdays$wk <- ifelse(data_with_weekdays$day %in% c("æ˜ŸæœŸå…­", "æ˜ŸæœŸæ—¥","weekend", "weekday") 
 # ATTENTION: My laptop has a Chinese environment, so I use Chinese to split weekend and weekdays.
 
 average_by_interval_wk <- ddply(data_with_weekdays, .(interval, wk), summarise, steps=mean(steps))
